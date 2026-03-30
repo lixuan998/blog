@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Scheduler Latency Budget">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b151f"/>
+      <stop offset="100%" stop-color="#04090e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.12" stroke="#8ad6ff" stroke-width="1">
+    <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200"/>
+    <path d="M80 0v630M160 0v630M240 0v630M320 0v630M400 0v630M480 0v630M560 0v630M640 0v630M720 0v630M800 0v630M880 0v630M960 0v630M1040 0v630"/>
+  </g>
+  <text x="86" y="108" fill="#8ad6ff" font-size="24" font-family="Source Code Pro, monospace">SCHED / LATENCY / RUNQUEUE</text>
+  <text x="86" y="168" fill="#eff6ff" font-size="54" font-family="Roboto Slab, serif">Wakeup Path Latency Budget</text>
+  <text x="86" y="214" fill="#9fb4c9" font-size="24" font-family="Roboto Slab, serif">拆开 sched_wakeup 到 sched_switch 之间的每一段成本</text>
+  <path d="M104 344H1096" stroke="#1b3043" stroke-width="4"/>
+  <rect x="124" y="306" width="184" height="76" rx="12" fill="none" stroke="#8ad6ff" stroke-width="2"/>
+  <rect x="352" y="306" width="184" height="76" rx="12" fill="none" stroke="#8ecea6" stroke-width="2"/>
+  <rect x="580" y="306" width="184" height="76" rx="12" fill="none" stroke="#ffbf69" stroke-width="2"/>
+  <rect x="808" y="306" width="184" height="76" rx="12" fill="none" stroke="#ff7b72" stroke-width="2"/>
+  <text x="146" y="352" fill="#8ad6ff" font-size="22" font-family="Source Code Pro, monospace">try_to_wake_up</text>
+  <text x="402" y="352" fill="#8ecea6" font-size="22" font-family="Source Code Pro, monospace">enqueue_task</text>
+  <text x="632" y="352" fill="#ffbf69" font-size="22" font-family="Source Code Pro, monospace">check_preempt</text>
+  <text x="852" y="352" fill="#ff7b72" font-size="22" font-family="Source Code Pro, monospace">context switch</text>
+</svg>
+
