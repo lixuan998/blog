@@ -1,14 +1,14 @@
 version: 6.1.5
 variant: default
-logo: /images/kernel-mark.svg
+logo: /images/kernel-chip-mark.png
 
 head:
-    favicon: /images/kernel-favicon.svg
+    favicon: /images/kernel-favicon.png
     open_graph:
         title: Kernel Field Notes
         type: blog
         url: https://lixuan998.github.io/blog/
-        image: https://lixuan998.github.io/blog/images/og-kernel-grid.svg
+        image: https://lixuan998.github.io/blog/images/og-kernel-hacking.png
         site_name: Kernel Field Notes
         author: lixuan998
         description: 聚焦操作系统、内核、调度器、内存管理与 I/O 路径分析。
@@ -57,7 +57,7 @@ widgets:
         author: lixuan998
         author_title: Systems Research / Kernel / Performance
         location: Shanghai
-        avatar: /images/profile-blueprint.svg
+        avatar: /images/kernel-avatar.png
         avatar_rounded: false
         has_hitokoto: false
         statement: 记录内核路径、调度延迟、内存布局与 I/O 栈，优先基于源码、调用链和观测数据。

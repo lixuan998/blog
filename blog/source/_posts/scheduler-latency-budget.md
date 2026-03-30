@@ -8,7 +8,8 @@ tags:
   - CFS
   - wakeup
   - perf
-thumbnail: /blog/images/cover-scheduler.svg
+thumbnail: /blog/images/cover-scheduler.png
+og_image: https://lixuan998.github.io/blog/images/cover-scheduler.png
 toc: true
 ---
 
