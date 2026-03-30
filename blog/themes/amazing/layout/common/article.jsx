@@ -26,7 +26,7 @@ module.exports = class extends Component {
         const { url_for, date, date_xml, __, _p, _get_md5, _get_path_end_str } = helper;
 
         const language = toMomentLocale(page.lang || page.language || config.language || 'en');
-        const cover = page.thumbnail ? url_for(page.thumbnail) : null;
+        const cover = page.thumbnail ? page.thumbnail : null;
 
         const words = getWordCount(page._content);
         const time = moment.duration((words / 150.0) * 60, 'seconds');
@@ -37,15 +37,10 @@ module.exports = class extends Component {
         const lastModified = __('article.last_modified');
 
         const isPost = page.layout == 'post';
-        const primaryCategory = page.categories && page.categories.length
-            ? (page.categories.data ? page.categories.data[0].name : page.categories[0].name)
-            : 'Field Note';
-        const primaryTag = page.tags && page.tags.length
-            ? (page.tags.data ? page.tags.data[0].name : page.tags[0].name)
-            : null;
 
         const isGitalk = comment !== undefined && comment.type !== undefined && comment.type == 'gitalk';
-        const showComment = comment !== undefined && comment.type !== undefined
+        const showComment = comment !== undefined
+            && comment.type !== undefined
             && (comment.type == 'gitalk' || comment.type == 'valine' || comment.type == 'utteranc');
         var id = _get_md5(_get_path_end_str(page.path, page.uniqueId, page.title));
         var md5Id = id;
@@ -58,7 +53,7 @@ module.exports = class extends Component {
             {(indexAt != undefined & indexAt == 0) ? <AdsenseX config={config} display={index_zero_position_ad}/> : null}
             {!index ? <AdsenseX config={config} display={article_head_has_ad}/> : null}
             {/* Main content */}
-            <div class={`card article-card${index ? ' article-card-index' : ' article-card-post'}`}>
+            <div class="card">
                 {/* Thumbnail */}
                 {cover ? <div class="card-image">
                     {index ? <a href={url_for(page.link || page.path)} class="image is-7by3">
@@ -119,15 +114,11 @@ module.exports = class extends Component {
                             <div class="pin-icon"><i class="fas fa-thumbtack"></i></div> : null}
                     </div> : null}
                     {/* Title */}
-                    {index ? <div class="article-kicker">
-                        <span class="article-kicker-item">{primaryCategory}</span>
-                        {primaryTag ? <span class="article-kicker-item">{primaryTag}</span> : null}
-                    </div> : null}
                     <h1 class="title is-3 is-size-4-mobile">
                         {index ? <a class="link-muted" href={url_for(page.link || page.path)}>{page.title}</a> : page.title}
                     </h1>
                     {/* Content/Excerpt */}
-                    <div class={`content${index ? ' article-excerpt' : ''}`} dangerouslySetInnerHTML={{ __html: index && page.excerpt ? page.excerpt : page.content }}></div>
+                    <div class="content" dangerouslySetInnerHTML={{ __html: index && page.excerpt ? page.excerpt : page.content }}></div>
                     {index && indexShowTagsCat ? <div class="index-category-tag">
                         {/* categories */}
                         {page.categories && page.categories.length ? <div class="level-item">

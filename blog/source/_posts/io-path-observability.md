@@ -8,7 +8,7 @@ tags:
   - VFS
   - Page Cache
   - bpftrace
-thumbnail: /images/cover-io-path.svg
+thumbnail: /blog/images/cover-io-path.svg
 toc: true
 ---
 

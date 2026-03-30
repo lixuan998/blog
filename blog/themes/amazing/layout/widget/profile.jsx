@@ -24,8 +24,6 @@ class Profile extends Component {
             author,
             authorTitle,
             location,
-            statement,
-            focus,
             counter,
             followLink,
             followTitle,
@@ -46,46 +44,43 @@ class Profile extends Component {
 
         return <div class="card widget" data-type="profile">
             <div class="card-content">
-                <div class="profile-shell">
-                    <div class="profile-copy">
-                        <p class="profile-eyebrow">SYSTEM PROFILE</p>
-                        {author ? <p class="title is-size-4 is-block profile-name" style={{'line-height': 'inherit'}}>{author}</p> : null}
-                        {authorTitle ? <p class="is-size-6 is-block profile-role">{authorTitle}</p> : null}
-                        {location ? <p class="is-size-6 is-flex profile-location">
-                            <i class="fas fa-map-marker-alt mr-1"></i>
-                            <span>{location}</span>
-                        </p> : null}
-                        {statement ? <p class="profile-statement">{statement}</p> : null}
+                <nav class="level">
+                    <div class="level-item has-text-centered flex-shrink-1">
+                        <div>
+                            <figure class="image is-128x128 mx-auto mb-2">
+                                <img class={'avatar' + (avatarRounded ? ' is-rounded' : '')} src={avatar} alt={author} />
+                            </figure>
+                            {author ? <p class="title is-size-4 is-block" style={{'line-height': 'inherit'}}>{author}</p> : null}
+                            {authorTitle ? <p class="is-size-6 is-block">{authorTitle}</p> : null}
+                            {location ? <p class="is-size-6 is-flex justify-content-center">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                <span>{location}</span>
+                            </p> : null}
+                        </div>
                     </div>
-                    <figure class="image is-96x96 profile-avatar-shell">
-                        <img class={'avatar' + (avatarRounded ? ' is-rounded' : '')} src={avatar} alt={author} />
-                    </figure>
-                </div>
-                {focus && focus.length ? <div class="profile-focus">
-                    {focus.map(item => <span class="tag profile-focus-tag">{item}</span>)}
-                </div> : null}
-                <nav class="level is-mobile profile-stats">
+                </nav>
+                <nav class="level is-mobile">
                     <div class="level-item has-text-centered is-marginless">
                         <div>
-                            <p class="heading profile-stat-label">{counter.post.title}</p>
+                            <p class="heading">{counter.post.title}</p>
                             <a href={counter.post.url}>
-                                <p class="title profile-stat-value">{counter.post.count}</p>
+                                <p class="title">{counter.post.count}</p>
                             </a>
                         </div>
                     </div>
                     <div class="level-item has-text-centered is-marginless">
                         <div>
-                            <p class="heading profile-stat-label">{counter.category.title}</p>
+                            <p class="heading">{counter.category.title}</p>
                             <a href={counter.category.url}>
-                                <p class="title profile-stat-value">{counter.category.count}</p>
+                                <p class="title">{counter.category.count}</p>
                             </a>
                         </div>
                     </div>
                     <div class="level-item has-text-centered is-marginless">
                         <div>
-                            <p class="heading profile-stat-label">{counter.tag.title}</p>
+                            <p class="heading">{counter.tag.title}</p>
                             <a href={counter.tag.url}>
-                                <p class="title profile-stat-value">{counter.tag.count}</p>
+                                <p class="title">{counter.tag.count}</p>
                             </a>
                         </div>
                     </div>
@@ -114,8 +109,6 @@ Profile.Cacheable = cacheComponent(Profile, 'widget.profile', props => {
         author = props.config.author,
         author_title,
         location,
-        statement,
-        focus,
         follow_link,
         social_links,
         has_hitokoto
@@ -157,8 +150,6 @@ Profile.Cacheable = cacheComponent(Profile, 'widget.profile', props => {
         author,
         authorTitle: author_title,
         location,
-        statement,
-        focus,
         counter: {
             post: {
                 count: postCount,

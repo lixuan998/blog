@@ -8,7 +8,7 @@ tags:
   - x86_64
   - 页表
   - 直接映射
-thumbnail: /images/cover-address-space.svg
+thumbnail: /blog/images/cover-address-space.svg
 toc: true
 ---
 

@@ -20,7 +20,6 @@ class Navbar extends Component {
             logoUrl,
             siteUrl,
             siteTitle,
-            siteSubtitle,
             menu,
             links,
             showToc,
@@ -34,19 +33,10 @@ class Navbar extends Component {
             if (logo.text) {
                 navbarLogo = logo.text;
             } else {
-                navbarLogo = <Fragment>
-                    <img class="navbar-brand-mark" src={logoUrl} alt={siteTitle} height="28" />
-                    <span class="navbar-brand-text">
-                        <span class="navbar-brand-title">{siteTitle}</span>
-                        {siteSubtitle ? <span class="navbar-brand-subtitle">{siteSubtitle}</span> : null}
-                    </span>
-                </Fragment>;
+                navbarLogo = <img src={logoUrl} alt={siteTitle} height="28" />;
             }
         } else {
-            navbarLogo = <span class="navbar-brand-text">
-                <span class="navbar-brand-title">{siteTitle}</span>
-                {siteSubtitle ? <span class="navbar-brand-subtitle">{siteSubtitle}</span> : null}
-            </span>;
+            navbarLogo = siteTitle;
         }
 
         return <nav class="navbar navbar-main is-fixed-top">
@@ -122,7 +112,6 @@ module.exports = cacheComponent(Navbar, 'common.navbar', props => {
         logoUrl: url_for(logo),
         siteUrl: url_for('/'),
         siteTitle: title,
-        siteSubtitle: config.subtitle,
         menu,
         links,
         showToc,

@@ -14,7 +14,10 @@ $size-small ?= .75rem
 
 $primary ?= $blue
 $custom-colors ?= {
-    grey-lightest: ($grey-lightest $grey-darker)
+    grey-lightest: {
+        '1': $grey-lightest
+        '2': $grey-darker
+    }
 }
 
 $navbar-item-active-color ?= $primary

@@ -15,8 +15,8 @@ importers:
         specifier: ^6.8.5
         version: 6.8.5(@babel/core@7.29.0)
       bulma-stylus:
-        specifier: 0.9.2-rc.1
-        version: 0.9.2-rc.1
+        specifier: 0.8.0
+        version: 0.8.0
       hexo:
         specifier: ^8.0.0
         version: 8.1.1(chokidar@3.6.0)
@@ -688,8 +688,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
-  bulma-stylus@0.9.2-rc.1:
-    resolution: {integrity: sha512-ROpYCEzj/9m3mjfvnFSSl2FUQnnKLsW9D0mL2CBIan4e7P7iLOXfThr+9u7HGvMywNUGgD1lXVKtTiYH2WrhXQ==}
+  bulma-stylus@0.8.0:
+    resolution: {integrity: sha512-9Q9BMPeHFyJ5EWh/tJPCcLDYEovKzUBOyMHsKEIyxSYEKG8wqt9RVuTumaJ2AfDjyHC9OifWKOfJSweKYD5IMQ==}
 
   bytes@3.1.2:
     resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
@@ -2386,7 +2386,7 @@ snapshots:
       node-releases: 2.0.36
       update-browserslist-db: 1.2.3(browserslist@4.28.1)
 
-  bulma-stylus@0.9.2-rc.1: {}
+  bulma-stylus@0.8.0: {}
 
   bytes@3.1.2: {}
 
