@@ -1,7 +1,12 @@
 .DS_Store
+archive/
+code/
+doc/
+journal/
+tmp/
+docs/
 blog/node_modules/
 blog/public/
 blog/db.json
 blog/.deploy_git/
 blog/themes/amazing/node_modules/
-
