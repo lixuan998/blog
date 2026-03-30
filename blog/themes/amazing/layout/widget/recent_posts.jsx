@@ -1,6 +1,5 @@
 const { Component } = require('inferno');
 const {cacheComponent} = require('hexo-component-inferno/lib/util/cache');
-const ArticleMedia = require('hexo-component-inferno/lib/view/common/article_media');
 
 class RecentPosts extends Component {
     render() {
@@ -9,15 +8,17 @@ class RecentPosts extends Component {
         return <div class="card widget">
             <div class="card-content">
                 <h3 class="menu-label">{title}</h3>
-                {posts.map(post => {
-                    return <ArticleMedia
-                        thumbnail={post.thumbnail}
-                        url={post.url}
-                        title={post.title}
-                        date={post.date}
-                        dateXml={post.dateXml}
-                        categories={post.categories} />;
-                })}
+                <div class="recent-notes">
+                    {posts.map(post => <article class="recent-note">
+                        <p class="recent-note-date">
+                            <time dateTime={post.dateXml}>{post.date}</time>
+                        </p>
+                        <p class="recent-note-title">
+                            <a href={post.url}>{post.title}</a>
+                        </p>
+                        {post.category ? <p class="recent-note-category">{post.category}</p> : null}
+                    </article>)}
+                </div>
             </div>
         </div>;
     }
@@ -34,11 +35,7 @@ module.exports = RecentPosts.Cacheable = cacheComponent(RecentPosts, 'widget.rec
         title: post.title,
         date: date(post.date),
         dateXml: date_xml(post.date),
-        thumbnail: post.thumbnail ? post.thumbnail : null,
-        categories: post.categories.map(category => ({
-            name: category.name,
-            url: url_for(category.path)
-        }))
+        category: post.categories.length ? post.categories.data[0].name : null
     }));
     return {
         posts,
