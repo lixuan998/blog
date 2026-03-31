@@ -7,6 +7,18 @@ module.exports = class extends Component {
     render() {
         const { config, page, site, helper } = this.props;
         const { url_for, my_cdn, __, date_xml, date } = helper;
+        const hasPosts = site.posts && site.posts.length;
+
+        if (!hasPosts) {
+            return <div class="card home-empty">
+                <div class="card-content home-empty-shell">
+                    <img class="home-empty-mark" src={url_for(config.logo || '/images/kernel-chip-mark.png')} alt={config.title} />
+                    <p class="home-empty-kicker">ARCHIVE</p>
+                    <h1 class="title is-2 home-empty-title">归档</h1>
+                    <p class="home-empty-copy">当前还没有已发布文章，所以归档页暂时为空。后续发布文章后，这里会自动按时间归档。</p>
+                </div>
+            </div>;
+        }
 
         const language = page.lang || page.language || config.language;
 
