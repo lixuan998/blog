@@ -10,13 +10,13 @@ head:
         url: https://lixuan998.github.io/blog/
         image: https://lixuan998.github.io/blog/images/og-kernel-hacking.png
         site_name: Hacking Field
-        author: lixuan998
+        author: Lixuan
         description: 聚焦操作系统、内核、调度器、内存管理与 I/O 路径分析。
     structured_data:
         title: Hacking Field
         description: 聚焦操作系统、内核、调度器、内存管理与 I/O 路径分析。
         url: https://lixuan998.github.io/blog/
-        author: lixuan998
+        author: Lixuan
 
 navbar:
     menu:
@@ -54,7 +54,7 @@ widgets:
     -
         position: left
         type: profile
-        author: lixuan998
+        author: Lixuan
         author_title: Systems Research / Kernel / Performance
         location: Shanghai
         avatar: /images/kernel-avatar.png
