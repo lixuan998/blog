@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Kernel Field Notes
+title: Hacking Field
 subtitle: 操作系统研究手记
 description: 聚焦内核、内存管理、调度器、I/O 路径与系统性能分析。
 keywords:

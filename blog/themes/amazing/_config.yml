@@ -5,15 +5,15 @@ logo: /images/kernel-chip-mark.png
 head:
     favicon: /images/kernel-favicon.png
     open_graph:
-        title: Kernel Field Notes
+        title: Hacking Field
         type: blog
         url: https://lixuan998.github.io/blog/
         image: https://lixuan998.github.io/blog/images/og-kernel-hacking.png
-        site_name: Kernel Field Notes
+        site_name: Hacking Field
         author: lixuan998
         description: 聚焦操作系统、内核、调度器、内存管理与 I/O 路径分析。
     structured_data:
-        title: Kernel Field Notes
+        title: Hacking Field
         description: 聚焦操作系统、内核、调度器、内存管理与 I/O 路径分析。
         url: https://lixuan998.github.io/blog/
         author: lixuan998
